@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>City Hall</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="cityhall-main-container">
+                <div class="cityhall-header">
+                    <i class="fas fa-city"></i>
+                    <h1>LOS SANTOS CITY HALL</h1>
+                </div>
+
+                <div class="cityhall-option-blocks">
+                    <div class="cityhall-option-block" data-page="identity">
+                        <i class="far fa-id-card"></i>
+                        <h3>Identity</h3>
+                        <p>Manage documents</p>
+                    </div>
+                    <div class="cityhall-option-block" data-page="job">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Employment</h3>
+                        <p>Find jobs</p>
+                    </div>
+                </div>
+
+                <div class="cityhall-identity-page">
+                    <div class="identity-page-blocks"></div>
+                    <button class="request-identity-button">Buy</button>
+                    <button class="back-to-main">Back</button>
+                </div>
+
+                <div class="cityhall-job-page">
+                    <div class="job-page-blocks"></div>
+                    <button class="apply-job-button">Apply</button>
+                    <button class="back-to-main">Back</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./app.js"></script>
+</html>
+

@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+:root {
+  --primary-color: #3b82f6;
+  --secondary-color: #10b981;
+  --purple-color: #8b5cf6;
+  --background-color: rgba(17, 24, 39, 0.95);
+  --text-color: #fff;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 90vw;
+  height: auto;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.95) 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+}
+
+.cityhall-main-container {
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.cityhall-header {
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cityhall-header i {
+  font-size: 24px;
+  color: var(--text-color);
+}
+
+.cityhall-header h1 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.cityhall-option-blocks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 10px;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cityhall-option-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.cityhall-option-block[data-page="identity"] {
+  background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%);
+}
+
+.cityhall-option-block[data-page="job"] {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.cityhall-option-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cityhall-option-block i {
+  font-size: 36px;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+
+.cityhall-option-block h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.cityhall-option-block p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cityhall-identity-page,
+.cityhall-job-page {
+  display: none;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.identity-page-blocks,
+.job-page-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.identity-page-block,
+.job-page-block {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+
+.identity-page-block:hover,
+.job-page-block:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.identity-page-block h3,
+.job-page-block h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.identity-page-block p,
+.job-page-block p {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.4;
+}
+
+.request-identity-button,
+.apply-job-button,
+.back-to-main {
+  display: none;
+  padding: 10px 20px;
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.request-identity-button:hover,
+.apply-job-button:hover,
+.back-to-main:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.back-to-main {
+  background: var(--secondary-color);
+}
+
+.back-to-main:hover {
+  background: #059669;
+}
+
+.identity-selected,
+.job-selected {
+  border: 2px solid var(--primary-color);
+  background: rgba(59, 130, 246, 0.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.slide-out {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
