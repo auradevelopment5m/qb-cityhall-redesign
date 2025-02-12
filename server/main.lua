@@ -7,7 +7,8 @@ local function AddCityJob(jobName, toCH)
     if availableJobs[jobName] then return false, 'already added' end
     availableJobs[jobName] = {
         ['label'] = toCH.label,
-        ['isManaged'] = toCH.isManaged
+        ['isManaged'] = toCH.isManaged,
+        ['description'] = toCH.description
     }
     return true, 'success'
 end
