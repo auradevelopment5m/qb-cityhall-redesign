@@ -21,10 +21,11 @@ const Close = () => {
 const SetJobs = (jobs) => {
   $(".job-page-blocks").empty()
   $.each(jobs, (job, info) => {
+    const description = info.description || "No description available."
     const html = `
             <div class="job-page-block slide-in" data-job="${job}">
                 <h3>${info.label}</h3>
-                <p>${info.description}</p>
+                <p>${description}</p>
             </div>`
     $(".job-page-blocks").append(html)
   })
