@@ -4,16 +4,6 @@ let selectedIdentityCost = null
 let selectedJob = null
 let selectedJobId = null
 
-const jobDescriptions = {
-  trucker: "Drive trucks and deliver goods across the city.",
-  taxi: "Transport passengers to their destinations.",
-  tow: "Assist in removing illegally parked or disabled vehicles.",
-  reporter: "Gather and report news for the local media.",
-  garbage: "Collect and dispose of waste to keep the city clean.",
-  bus: "Operate public transportation buses on designated routes.",
-  hotdog: "Run a hot dog stand and serve delicious street food.",
-}
-
 const Open = (jobs) => {
   SetJobs(jobs)
   $(".container").fadeIn(300).addClass("fade-in")
@@ -31,11 +21,10 @@ const Close = () => {
 const SetJobs = (jobs) => {
   $(".job-page-blocks").empty()
   $.each(jobs, (job, info) => {
-    const description = jobDescriptions[job] || "No description available."
     const html = `
             <div class="job-page-block slide-in" data-job="${job}">
                 <h3>${info.label}</h3>
-                <p>${description}</p>
+                <p>${info.description}</p>
             </div>`
     $(".job-page-blocks").append(html)
   })
